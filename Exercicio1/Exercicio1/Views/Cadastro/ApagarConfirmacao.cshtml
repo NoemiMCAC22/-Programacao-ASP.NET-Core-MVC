@@ -1,0 +1,13 @@
+﻿@model CadastroModel
+@{
+    ViewData["Title"] = "Confirmação apagar Cadastro Visistante";
+}
+
+<div class="text-center">
+    <h3><img src="~/img/apagar.png">Realmente deseja apagar o cadastro do(a) @Model.Nome?</h3>
+
+
+
+<a class="btn btn-secondary btn-block" role="button" asp-controller="Cadastro" asp-action="Index">Cancelar</a>
+<a class="btn btn-dark btn-block" role="button" asp-controller="Cadastro" asp-action="Apagar" asp-route-id="@Model.Id">Apagar</a>
+</div>

@@ -1,0 +1,55 @@
+﻿@model List<CadastroModel>
+@{
+    ViewData["Title"] = "Cadastro Visistante";
+}
+
+<div class="text-center">
+
+    <img src="~/img/cadastrar.jpg">
+    
+    <h1 class="display-4">Cadastro de Contatos</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Telemóvel</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null && Model.Any())
+            {
+                foreach (CadastroModel cadastro in Model)
+                {
+                    <tr>
+                        <th scope="row">@cadastro.Id</th>
+                        <td>@cadastro.Nome</td>
+                        <td>@cadastro.Endereco</td>
+                        <td>@cadastro.Telemovel</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-secondary" asp-route-id="@cadastro.Id" asp-controller="Cadastro" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-dark" asp-route-id="@cadastro.Id"  asp-controller="Cadastro" asp-action="ApagarConfirmacao">Apagar</a>
+
+                    </div>
+                </td>
+            </tr>
+                }
+            }
+           
+            
+        </tbody>
+    </table>
+     <div class="">
+        <a class="btn btn-secondary" role="button" asp-controller="Cadastro" asp-action="Criar">Cadastre novo Contato</a>
+        <a class="btn btn-secondary" role="button" asp-controller="Home" asp-action="Index">Voltar a Página Principal</a>
+      </div>
+
+</div>
+
+
+
+

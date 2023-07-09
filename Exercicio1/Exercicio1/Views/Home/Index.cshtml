@@ -1,0 +1,23 @@
+﻿@model HomeModel
+@{
+    ViewData["Title"] = "Página Principal";
+}
+
+
+
+<div class="text-center">
+    <img src="~/img/estudando.jpg">
+    
+    <h2> <font color="#800080">Bem Vindo, @Model.Nome</font> </h2>
+    <h1 class="display-4"> <font color="#800080">Exercício 1 - Cadastro de Clientes</font></h1>
+    <br />
+
+    <p><font color="#800080">Este trabalho serve para desenvolver na prática, o conteúdo dado no decorrer desde módulo.</font></p>
+    <br />
+
+    <p><font color="#800080">Espero poder corresponder as espectativas relativamente a esta prática!</font></p>
+    <br />
+    
+    <a class="btn btn-light" role="button" asp-controller="Cadastro" asp-action="Index"><span>
+        <font color="#800080">Faça o seu @Model.Cadastro</font></span></a>
+</div>
